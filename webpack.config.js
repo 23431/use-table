@@ -10,22 +10,23 @@ const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { log } = require("console");
 
 const NODE_ENV = process.env.NODE_ENV || false;
 const BUILD_MODE = process.env.BUILD_MODE || false;
 const isProduction = NODE_ENV === "production" || false;
 const isModuleBuild = BUILD_MODE === "module" || false;
-
+log(isModuleBuild,'isModuleBuild');
 module.exports = {
   mode: isProduction ? "production" : "development",
   entry: {
-    index: isModuleBuild ? "./src/hooks/index.ts" : "./src/index.tsx",
+    index: isModuleBuild ? "./src/hooks/useTable.ts" : "./src/index.tsx",
   }, //如果你将 entry 设置为一个 array，那么只有数组中的最后一个会被暴露成库
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, isModuleBuild ? "lib" : "dist"),
     library: {
-      name: "cosDesign",
+      name: "use-x-table",
       type: "umd", // 以库的形式导出入口文件时，输出的类型,这里是通过umd的方式来暴露library,适用于使用方import的方式导入npm包
     },
   },

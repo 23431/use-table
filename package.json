@@ -1,11 +1,15 @@
 {
   "name": "use-x-table",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "antd table hooks",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "lib/index.js",
+  "typings": "lib/hooks/useTable.d.ts",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/*",
+    "lib/*"
+  ],
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
