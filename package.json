@@ -1,49 +1,55 @@
 {
-  "name": "use-table",
-  "version": "0.0.1",
+  "name": "use-x-table",
+  "version": "0.0.3",
   "description": "antd table hooks",
-  "main": "lib/index.js",
-  "module": "lib/index.js",
-  "typings": "lib/types/src/type.d.ts",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "dev": "rollup -wc rollup.config.dev.js",
-    "build": "rollup -c rollup.config.js",
-    "build:types": "tsc"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build:module": "cross-env NODE_ENV=production BUILD_MODE=module webpack --config webpack.config.js"
   },
   "repository": {
-    "url": "https://github.com/23431/use-table.git"
+    "type": "git",
+    "url": "git+https://github.com/23431/use-table.git"
   },
-  "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8",
-    "antd":">=4.42.13"
-  },
+  "keywords": [
+    "antd",
+    "react",
+    "hooks"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/23431/use-table/issues"
+  },
+  "homepage": "https://github.com/23431/use-table#readme",
   "devDependencies": {
-    "@babel/core": "7.12.3",
-    "@babel/plugin-proposal-class-properties": "7.12.1",
-    "@babel/preset-env": "7.12.1",
-    "@babel/preset-react": "7.12.5",
-    "@types/lodash-es": "4.17.3",
-    "@types/react": "17.0.2",
-    "rollup": "2.33.3",
-    "rollup-plugin-babel": "4.4.0",
-    "rollup-plugin-commonjs": "10.1.0",
-    "rollup-plugin-filesize": "9.1.2",
-    "rollup-plugin-json": "4.0.0",
-    "rollup-plugin-node-resolve": "5.2.0",
-    "rollup-plugin-terser": "7.0.2",
-    "rollup-plugin-typescript2": "0.29.0",
-    "rollup-plugin-uglify": "6.0.4",
-    "ts-node": "9.0.0",
-    "tslib": "2.0.3",
-    "typescript": "4.0.5"
+    "@babel/core": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "babel-loader": "^9.1.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "react": ">=17.0.2",
-    "react-dom": ">=17.0.2",
-    "rollup-plugin-serve": "^2.0.2",
-    "antd":">=4.42.13"
+    "antd": "^5.8.4",
+    "cross-env": "^7.0.3"
   }
 }

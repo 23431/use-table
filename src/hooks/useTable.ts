@@ -8,6 +8,7 @@ import {mergeConfig,defaultPage,createService} from './utils'
 
 
 export default function useTable<T = any>(httpRequest: (args?: any) => Promise<HttpResult<T>>, config?: Partial<Config>) {
+  debugger;
   const { isMount, fInstance, pagination } = mergeConfig(config);
   const [data, setData] = useState<T[]>([]);
   const [loading, setLoading] = useState(false);

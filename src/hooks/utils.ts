@@ -25,13 +25,18 @@ const defaultPage: PageType = {
       total: 0,
     };
     return async (args?: Record<string, any>) => {
+      debugger;
       try {
         const data = await func(args || {});
+        console.log(data,'data');
+        
         return {
           data: data?.list ?? [],
           total: data?.total ?? 0,
         } as ServiceResultType<T>;
       } catch (e) {
+        console.log(e,'e');
+        
         return result;
       }
     };
